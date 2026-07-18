@@ -139,8 +139,8 @@ For a screening model, **sensitivity** (minimizing missed TB cases) is the prior
 
 ## Author
 
-**Fadhillah Randy Widiawan (frw-dot)** — physician, emergency medicine (Indonesia).
+**Fadhillah Randy Widiawan (frw-dot)** — physician (Indonesia).
 
 ## License
 
-No license specified yet. Until one is added, default copyright applies and reuse is not permitted. Consider adding a `LICENSE` file (e.g. MIT for permissive reuse) if you intend the code to be shared.
+No license specified yet
