@@ -106,7 +106,7 @@ A CUDA-capable GPU is recommended (the notebook auto-detects and falls back to C
 
 ## Results
 
-*Metrics on the held-out validation set (fill in from your latest run):*
+*Metrics on the held-out validation set:*
 
 | Metric | Value |
 |---|---|
