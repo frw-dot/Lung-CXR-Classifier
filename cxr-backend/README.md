@@ -1,7 +1,11 @@
 # TB CXR Triage — Local Web App (M1b)
 
 A minimal local web app for your TB chest X-ray classifier: FastAPI backend
-(PyTorch ResNet18 + Grad-CAM) + a plain HTML/JS frontend.
+(PyTorch ResNet50 + Grad-CAM) + a plain HTML/JS frontend.
+
+This is the deployment layer for the training notebook in the parent
+[Lung-CXR-Classifier](..) repo — see the root [README](../README.md) for the
+model architecture, dataset, and training details.
 
 ## What's inside
 
@@ -76,15 +80,14 @@ Upload a chest X-ray, click **Run inference**, and you'll see:
 
 ## Notes on the model
 
-Your checkpoint is a standard `torchvision.models.resnet18` with the final
-`fc` layer replaced by `nn.Linear(512, 2)` — confirmed directly from the
-checkpoint's tensor shapes. No custom layers, so `build_model()` in
-`main.py` reconstructs the exact architecture before loading weights.
+Your checkpoint is a standard `torchvision.models.resnet50` with the final
+`fc` layer replaced by `nn.Linear(2048, 2)` — matching the training notebook
+in the parent repo. No custom layers, so `build_model()` in `main.py`
+reconstructs the exact architecture before loading weights.
 
-Grad-CAM is computed on `layer4[-1].conv2`, the last convolutional layer
-before global average pooling — the standard choice for ResNet-style CNNs,
-since it has the best balance of spatial resolution and class-discriminative
-features.
+Grad-CAM is computed on `layer4[-1]`, the last residual block before global
+average pooling — the standard choice for ResNet-style CNNs, since it has
+the best balance of spatial resolution and class-discriminative features.
 
 ## Troubleshooting
 

@@ -29,7 +29,7 @@ from gradcam import GradCAM, overlay_heatmap
 # CONFIG — edit these if your training setup differs
 # ---------------------------------------------------------------------------
 
-MODEL_PATH = "/Users/fadhillahrandywidiawan/Documents/Kerjaan/KODING/Prototipe 1/model/tb_model.pth"
+MODEL_PATH = "model/tb_model.pth"
 
 # IMPORTANT: this order must match your training notebook's class_to_idx.
 # If ImageFolder/your metadata-based Dataset was used, check the label
