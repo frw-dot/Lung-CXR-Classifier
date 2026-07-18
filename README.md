@@ -110,10 +110,10 @@ A CUDA-capable GPU is recommended (the notebook auto-detects and falls back to C
 
 | Metric | Value |
 |---|---|
-| Accuracy | _TBD_ |
-| Sensitivity (recall for TB) | _TBD_ |
-| Specificity | _TBD_ |
-| AUC | _TBD_ |
+| Accuracy | 93,5% |
+| Sensitivity (recall for TB) | 94,57% |
+| Specificity | 90,19% |
+| AUC | 97,81% |
 
 For a screening model, **sensitivity** (minimizing missed TB cases) is the priority metric, read alongside specificity to gauge the false-positive burden.
 
