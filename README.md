@@ -33,6 +33,7 @@ Tuberculosis remains a major public-health challenge, and chest radiography is a
 Lung-CXR-Classifier/
 ├── lung-tb-cxr-classifier.ipynb   # End-to-end training & evaluation notebook
 ├── CXR Dataset Multiple Sources   # Notes on the combined dataset sources
+├── cxr-backend/                   # FastAPI + Grad-CAM web app for serving the model
 └── README.md
 ```
 
@@ -104,6 +105,15 @@ A CUDA-capable GPU is recommended (the notebook auto-detects and falls back to C
 
 ---
 
+## Deployment / web app
+
+`cxr-backend/` is a local web app for serving the trained model: a FastAPI backend
+(`/predict`, `/health`) that runs inference with the exported `tb_model.pth` and returns
+a Grad-CAM heatmap alongside the prediction, plus a plain HTML/JS frontend. See
+[`cxr-backend/README.md`](cxr-backend/README.md) for setup and usage.
+
+---
+
 ## Results
 
 *Metrics on the held-out validation set:*
@@ -123,7 +133,7 @@ For a screening model, **sensitivity** (minimizing missed TB cases) is the prior
 
 - [ ] Move from binary (Normal / TB) to **multiclass** CXR classification (e.g. Normal / TB / Pneumonia / other)
 - [ ] Validate on a **prospective, locally-sourced dataset**
-- [ ] Add explainability (e.g. Grad-CAM heatmaps) to support radiologist review
+- [x] Add explainability (e.g. Grad-CAM heatmaps) to support radiologist review — see `cxr-backend/`
 - [ ] External validation across scanners/sites to test generalization
 - [ ] Prototype integration into an emergency/triage workflow
 
